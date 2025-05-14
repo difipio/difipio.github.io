@@ -1,0 +1,93 @@
+POPUP Code for Website
+
+/* Popup container - can be anything you want */
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: 600px;
+  background-color: #13757D;
+  color: #fff;
+  text-align: left;
+  border-radius: 6px;
+  padding: 20px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+	line-height: 150%;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+	
+.format {
+	color: #DB5A18;
+}	
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+
+
+<div class="popup" onclick="myFunction(event)"><span class="format">Click here to view important information about how we can help.
+	<span class="popuptext" id="myPopup">
+		<b>We Can Help With...</b>
+		<ul>
+		<li>Certain surprise health care bills through a surprise billing program</li>
+		<li>Health provider grievances</li>
+		<li>Denied health insurance claims and denied requests for health care services through the health care appeals process</li>
+		</ul>
+		<b>We Can Investigate...</b>
+		<ul>
+			<li>Claim-handling delays</li>
+			<li>Claim denials</li>
+			<li>Unsatisfactory settlements</li>
+			<li>Non-renewals and cancellations</li>
+			<li>Delays in premium refunds</li>
+			<li>Underwriting errors</li>
+			<li>Conflicting information from your insurer</li>
+			<li>Other insurance-related disputes</li>
+		</ul>
+		<p align="justify">For additional information about how we can and cannot help, please visit: <a href="https://difi.az.gov/file-complaint-against-insurance-entity" class="link2">https://difi.az.gov/file-complaint-against-insurance-entity</a></p>
+	</span>
+</div>
+<script>
+// When the user clicks on div, open the popup
+function myFunction(event) {
+  event.target.children[0].classList.toggle("show");
+}
+</script>
